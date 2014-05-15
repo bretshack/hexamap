@@ -13,28 +13,6 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-MAIN_PAGE_FOOTER_TEMPLATE = """\
-    <form action="/sign?%s" method="post">
-      <div><textarea name="content" rows="3" cols="60"></textarea></div>
-      <div><input type="submit" value="Sign Guestbook"></div>
-    </form>
-
-    <hr>
-
-    <form>Guestbook name:
-      <input value="%s" name="guestbook_name">
-      <input type="submit" value="switch">
-    </form>
-
-    <a href="%s">%s</a>
-
-  </body>
-</html>
-"""
-
-DEFAULT_GUESTBOOK_NAME = 'default_guestbook'
-
-
 # We set a parent key on the 'Greetings' to ensure that they are all in the same
 # entity group. Queries across the single entity group will be consistent.
 # However, the write rate should be limited to ~1/second.
