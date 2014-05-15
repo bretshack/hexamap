@@ -1,6 +1,4 @@
-__author__ = 'bretshack'
-#To change this template use Tools | Templates.
-from google.appengine.api import users
+"""A simple webapp2 server."""
 
 import webapp2
 
@@ -8,13 +6,8 @@ import webapp2
 class MainPage(webapp2.RequestHandler):
 
     def get(self):
-        user = users.get_current_user()
-
-        if user:
-            self.response.headers['Content-Type'] = 'text/plain'
-            self.response.write('Hello, ' + user.nickname())
-        else:
-            self.redirect(users.create_login_url(self.request.uri))
+        self.response.headers['Content-Type'] = 'text/plain'
+        self.response.write('Hello, World!')
 
 
 application = webapp2.WSGIApplication([
