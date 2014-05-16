@@ -13,7 +13,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 class MainPage(webapp2.RequestHandler):
     def get(self):
 
-        template = jinja_environment.get_template('index.html')
+        template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.out.write(template.render())
 
         
