@@ -10,6 +10,7 @@ handlers:
 
 - url: /.*
   script: test.application
+  secure: always
   
 libraries:
 - name: webapp2
