@@ -6,7 +6,57 @@
 */
 
 var grid = SVG("grid");
-var centerx = Math.floor(window.innerWidth/2);
-var centery = Math.floor(window.innerHeight/2);
+var centerx = getScreenCenterX();
+var centery = getScreenCenterY();
+
+function getScreenCenterY() {
+var y = 0;
+ 
+y = getScrollOffset()+(getInnerHeight()/2);
+ 
+return(y);
+}
+ 
+function getScreenCenterX() {
+return(document.body.clientWidth/2);
+}
+ 
+function getInnerHeight() {
+var y;
+if (self.innerHeight) // all except Explorer
+{
+y = self.innerHeight;
+}
+else if (document.documentElement &amp;&amp;
+document.documentElement.clientHeight)
+// Explorer 6 Strict Mode
+{
+y = document.documentElement.clientHeight;
+}
+else if (document.body) // other Explorers
+{
+y = document.body.clientHeight;
+}
+return(y);
+}
+ 
+function getScrollOffset() {
+var y;
+if (self.pageYOffset) // all except Explorer
+{
+y = self.pageYOffset;
+}
+else if (document.documentElement &amp;&amp;
+document.documentElement.scrollTop)
+// Explorer 6 Strict
+{
+y = document.documentElement.scrollTop;
+}
+else if (document.body) // all other Explorers
+{
+y = document.body.scrollTop;
+}
+return(y);
+}
 
 var hex = draw.polygon(coordinates(centerx,centery,20,6)).fill('none').stroke({ width: 3 });
