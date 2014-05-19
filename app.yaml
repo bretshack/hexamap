@@ -8,14 +8,16 @@ handlers:
 - url: /.*
   script: test.application
   secure: always
+
 - url: /stylesheets
   static_dir: stylesheets
+
 - url: /js
   static_dir: js
   mime_type: text/javascript
 
 libraries:
 - name: webapp2
-  version: 2.5.2
+  version: latest
 - name: jinja2
-  version: 2.6
+  version: latest
