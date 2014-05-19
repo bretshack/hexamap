@@ -8,8 +8,18 @@
 var grid = SVG("grid");
 var centerx = getScreenCenterX();
 var centery = getScreenCenterY();
+var size = 20;
 
-var hex = grid.polygon(coordinates(centerx,centery,20,6)).fill('none').stroke({ width: 3 });
+var centerhex = grid.polygon(coordinates(centerx,centery,size,6)).fill('none').stroke({ width: 3 });
+
+var height = size * 2;
+var width = Math.sqrt(3)/2 * height;
+
+var neighbory = centery + height;
+var neighborx = centerx + width
+
+var neighborhex1 = grid.polygon(coordinates(centerx,neighbory,size,6)).fill('none').stroke({ width: 3 });
+var neighborhex3 = grid.polygon(coordinates(neighborx,centery,size,6)).fill('none').stroke({ width: 3 });
 
 function getScreenCenterY() {
   var y = 0;
