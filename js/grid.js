@@ -14,12 +14,12 @@ var centerhex = grid.polygon(coordinates(centerx,centery,size,6)).fill('none').s
 
 var height = size * 2;
 var width = Math.sqrt(3)/2 * height;
+var shiftx = width / 2;
+var shifty = height / 2;
 
-var neighbory = centery + height;
-var neighborx = centerx + width
-
-var neighborhex1 = grid.polygon(coordinates(centerx,neighbory,size,6)).fill('none').stroke({ width: 3 });
-var neighborhex3 = grid.polygon(coordinates(neighborx,centery,size,6)).fill('none').stroke({ width: 3 });
+var neighborhex1 = grid.polygon(coordinates(centerx+shiftx,centery-shifty,size,6)).fill('none').stroke({ width: 3 });
+var neighborhex2 = grid.polygon(coordinates(centerx+width,centery,size,6)).fill('none').stroke({ width: 3 });
+var neighborhex3 = grid.polygon(coordinates(centerx+shiftx,centery+shifty,size,6)).fill('none').stroke({ width: 3 });
 
 function getScreenCenterY() {
   var y = 0;
