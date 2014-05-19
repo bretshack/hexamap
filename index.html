@@ -3,16 +3,15 @@
 <html>
   <head>
     <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("jquery", "2.1.1");
+    </script>
+    <script type='text/javascript' src='hexagon.js'></script>
   </head>
   <body>
     <h1>My first SVG</h1>
-    
-    <svg width="100" height="100">
-      <polygon fill="lime" stroke="blue" stroke-width="10" 
-               points="850,75  958,137.5 958,262.5
-               850,325 742,262.6 742,137.5" />
-     Sorry, your browser does not support inline SVG.
-    </svg> 
+    <div id=#svg_div></div>
   </body>
 </html>
 {% endautoescape %}
