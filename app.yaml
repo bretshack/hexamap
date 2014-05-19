@@ -12,6 +12,7 @@ handlers:
   static_dir: stylesheets
 - url: /js
   static_dir: js
+  mime_type: text/javascript
 
 libraries:
 - name: webapp2
