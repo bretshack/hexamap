@@ -9,7 +9,7 @@ $('#svg_div').svg();
 var svg = $('#svg_div').svg('get');
 // call using polygon(x,y,rad,sides) where x and y are centre co-ordinates
 // rad is the radius of the vertices, and sides is the number of sides
-svg.path(polygon(50,50,60,6),{stroke: "black", "stroke-width":5, fill: "green",});
+svg.path(polygon(15,15,60,6),{stroke: "black", "stroke-width":5, fill: "green",});
 
 
 function polygon(x,y,rad,sides) {
