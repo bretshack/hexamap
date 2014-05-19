@@ -7,7 +7,7 @@
 
 
 var draw = SVG('drawing')
-var hex = draw.polygon(polygon(15,15,60,5)).fill('none').stroke({ width: 1 });
+var hex = draw.polygon(polygon(150,150,60,5)).fill('none').stroke({ width: 3 });
 
 
 function polygon(x,y,rad,sides) {
