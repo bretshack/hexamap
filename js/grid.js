@@ -59,4 +59,4 @@ y = document.body.scrollTop;
 return(y);
 }
 
-var hex = draw.polygon(coordinates(centerx,centery,20,6)).fill('none').stroke({ width: 3 });
+var hex = grid.polygon(coordinates(centerx,centery,20,6)).fill('none').stroke({ width: 3 });
