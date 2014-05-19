@@ -6,7 +6,7 @@
 */
 
 
-var draw = SVG('#drawing')
+var draw = SVG('drawing')
 var hex = draw.polygon(polygon(150,150,6,5)).fill('none').stroke({ width: 3 });
 
 
