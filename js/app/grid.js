@@ -22,7 +22,7 @@ define(["app/getScreenCenter", "app/coordinates", "svg.min", "app/hexagon"], fun
   var row = -9;
   for (col=9;col>=-9;col--) {
     for (row=-9;row<=9;row++) {
-      if (abs(row)%2===0) {
+      if (Math.abs(row)%2===0) {
         var hex = new Hexagon(centerx+(shiftx*col*2),centery+(shifty*row),size,col,row);
         grid.push(hex);
         griddraw.add(canvas.polygon(hex.path).fill('none').stroke({ width: 3 }));
