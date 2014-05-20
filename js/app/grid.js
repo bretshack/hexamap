@@ -20,12 +20,12 @@ define(["app/getScreenCenter", "app/coordinates", "svg.min", "app/hexagon"], fun
   for (col=0;col<=9;col++) {
     for (row=0;row<=9;row++) {
       if (Math.abs(row)%2===0) {
-        var hex = new Hexagon(centerx+(shiftx*(col+1)),centery+(shifty*(row*2)),size,col,row);
+        var hex = new Hexagon(centerx+(shiftx*(col+1)),centery+(shifty*(row)),size,col,row);
         grid.push(hex);
         griddraw.add(canvas.polygon(hex.path).fill('none').stroke({ width: 3 }));
       }
       else {
-        var hex = new Hexagon(centerx+(shiftx*(col*2)),centery+(shifty*(row+1)),size,col,row);
+        var hex = new Hexagon(centerx+(shiftx*(col)),centery+(shifty*(row+1)),size,col,row);
         grid.push(hex);
         griddraw.add(canvas.polygon(hex.path).fill('none').stroke({ width: 3 }));
       }
