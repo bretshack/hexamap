@@ -19,7 +19,7 @@ define(["app/getScreenCenter", "app/coordinates", "svg.min", "app/hexagon"], fun
   
   for (col=9;col>=-9;col--) {
     for (row=-9;row<=9;row++) {
-      var hex = new Hexagon(centerx+(shiftx*col),centery+(shifty*row),size,col,row);
+      var hex = new Hexagon(centerx+(shiftx*row),centery+(shifty*col),size,col,row);
       grid.push(hex);
       griddraw.add(canvas.polygon(hex.path).fill('none').stroke({ width: 3 }));
       alert(col + ", " + row);
