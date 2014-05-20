@@ -22,10 +22,18 @@ define(["app/getScreenCenter", "app/coordinates", "svg.min", "app/hexagon"], fun
   var row = -9;
   for (col=9;col>=-9;col--) {
     for (row=-9;row<=9;row++) {
-      var hex = new Hexagon(centerx+(shiftx*col*2),centery+(shifty*row*2),size,col,row);
-      grid.push(hex);
-      griddraw.add(canvas.polygon(hex.path).fill('none').stroke({ width: 3 }));
+      if (abs(row)%2===0) {
+        var hex = new Hexagon(centerx+(shiftx*col*2),centery+(shifty*row),size,col,row);
+        grid.push(hex);
+        griddraw.add(canvas.polygon(hex.path).fill('none').stroke({ width: 3 }));
+      }
+      else {
+        var hex = new Hexagon(centerx+(shiftx*col),centery+(shifty*row*2),size,col,row);
+        grid.push(hex);
+        griddraw.add(canvas.polygon(hex.path).fill('none').stroke({ width: 3 }));
+      }
       alert(col + ", " + row);
+      
     }
   }
   
