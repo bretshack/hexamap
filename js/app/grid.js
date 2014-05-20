@@ -18,16 +18,16 @@ define(["app/getScreenCenter", "app/coordinates", "svg.min", "app/hexagon"], fun
   var griddraw = canvas.group();
  
   
-  var col = 0;
-  var row = 0;
+  var col = 9;
+  var row = -9;
   for (col=9;col>=-9;col--) {
-    for (row=-9;row>=9;row++) {
-      var hex = new Hexagon(centerx+(shiftx*col),centery-(shifty*row),size,col,row);
+    for (row=-9;row<=9;row++) {
+      var hex = new Hexagon(centerx+(shiftx*col*2),centery+(shifty*row*2),size,col,row);
       grid.push(hex);
       griddraw.add(canvas.polygon(hex.path).fill('none').stroke({ width: 3 }));
-      alert(col+", "+row);
+      alert(col + ", " + row);
     }
-  };
+  }
   
   /*
   var hex00 = new Hexagon(centerx,centery,size, 0, 0);
