@@ -14,7 +14,8 @@ requirejs.config({
   baseUrl: "js/lib",
   paths: {
       "app": "../app",
-      "jquery": "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min"
+      "jquery": "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min",
+      "d3": "//cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js"
   }
 });
 
