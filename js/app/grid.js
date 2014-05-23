@@ -13,7 +13,8 @@ define(["app/getScreenCenter", "d3", "app/hexagon"], function(getScreenCenter, d
   var shifty = hexsize * 3 / 2;
   var shiftx = _s32 * hexsize;
   
-  var test - Math.sin(0)*30;
+  var test = "The start is ";
+  test = test + Math.sin(0)*30;
   test = test + ", ";
   test = test + Math.cos(0)*30;
   
