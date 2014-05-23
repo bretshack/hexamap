@@ -5,19 +5,25 @@
 * Time: 04:38 PM
 */
 
-define(['app/coordinates'], function(coordinates){
-  return function Hexagon(x, y, size, q, r) {
-    
-    var height = size * 2;
-    var width = Math.sqrt(3)/2 * height;
-    this.axial = [q, r];
-    this.center = x + "," + y;
-    var points = coordinates(x,y,size,6);
-    this.points = points;
-    var path = "";
-    for (i=0;i<6;i++) {
-      path = path + points[i] + " ";
+define(function(require) {
+  "use strict";
+  
+  function Hexagon(xOffset, yOffset, size) {
+    if (!(this instanceof Hexagon)) {
+      throw new TypeError("Hexagon constructor cannot be called as a function.");
     }
-    this.path = path;
+    this.q = xOffset;
+    this.r = yOffset;
+    this.size = size;
+    var _s32 = Math.sqrt(3)/2;
+    this._vertices = [[size+xOffset, 0+yOffset], [size/2+xOffset, size*_s32+yOffset], [-size/2+xOffset, size*_s32+yOffset],
+                     [-size+xOffset, 0+yOffset], [-size/2+xOffset, -size*_s32+yOffset], [size/2+xOffset, -size*_s32+yOffset]];
   }
+  
+  Hexagon.prototype = {
+    getVertices: function() {return this._vertices;},
+  }
+  
+  return Hexagon;
+  
 });
