@@ -13,7 +13,7 @@ define(["app/getScreenCenter", "d3", "app/hexagon"], function(getScreenCenter, d
   var shifty = hexsize * 3 / 2;
   var shiftx = _s32 * hexsize;
   
-  console.log(Math.sin(0)*30 & ", " & Math.cos(0)*30)
+  console.log(Math.sin(0)*30 & ", " & Math.cos(0)*30);;
   
   /*
    * Hexagon shaped grid of radius 'gridsize' (i.e. 'gridsize' hexagons from center to vertex, not counting center hex)
