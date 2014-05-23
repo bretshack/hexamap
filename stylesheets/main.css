@@ -2,16 +2,9 @@
     Document   : stylesheets/main.css
     Created on : 2014-05-15 08:53 PM
     Author     : bretshack
-    Description:
-    Purpose of the stylesheet follows.
+    Description: Main stylesheet for app
 */
 
-.canvas rect {
-  fill: steelblue;
-}
+html, body {margin:5px; padding:0; overflow:hidden}
 
-.canvas text {
-  fill: white;
-  font: 10px sans-serif;
-  text-anchor: end;
-}
+#canvas { position:fixed; top:0; left:0; height:100%; width:100% }
