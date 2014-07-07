@@ -1,0 +1,40 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+
+<polymer-element name="hexagon-tile" attributes="rad, shiftX, shiftY, stroke, width, fill">
+  <template>
+    <svg>
+      <path d="{{path}}"
+            style="fill:{{fill}}"
+            stroke="{{stroke}}"
+            stroke-width="{{width}}"
+            transform="translate({{shiftX}},{{shiftY}}) rotate({{rotate}})">
+      </path>
+    </svg>
+  </template>
+  <script>
+    Polymer("hexagon-tile", {
+      rad: 30,
+      shiftX: 100,
+      shiftY: 100,
+      stroke: "black",
+      width: .03,
+      fill: "#CC66FF",
+      rotate: 0,
+
+      created: function() {
+        var _s32 = (Math.sqrt(3) / 2);
+        this.path =
+        "M" + (1)*this.rad + " " + (0) +
+        " L" + (1/2)*this.rad + " " + (_s32)*this.rad +
+        " L" + (-1/2)*this.rad + " " + (_s32)*this.rad +
+        " L" + (-1)*this.rad + " " + (0) +
+        " L" + (-1/2)*this.rad +  " " + (-_s32)*this.rad +
+        " L" + (1/2)*this.rad + " "  + (-_s32)*this.rad +
+        " z";
+        // this.shiftX = this.shiftX+(this.rad*3/2)
+        // this.shiftY = this.shiftY+(this.rad*3/4)
+      }
+    });
+  </script>
+</polymer-element>

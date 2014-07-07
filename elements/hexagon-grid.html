@@ -1,0 +1,21 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="hexagon-tile.html">
+
+<polymer-element name="hexagon-grid">
+  <template repeat="{{lights}}">
+    <ul>
+      <li> {{color}} , {{dark}} , {{cy}} </li>
+    </ul>
+  </template>
+  <script>
+    Polymer("hexagon-grid", {
+      ready: function() {
+        this.lights = [
+          {color: 'red', dark: 'maroon', cy: 80},
+          {color: 'orange', dark: 'sienna', cy: 200},
+          {color: 'lightgreen', dark: 'darkgreen', cy: 320}
+        ];
+      }
+    });
+  </script>
+</polymer-element>
