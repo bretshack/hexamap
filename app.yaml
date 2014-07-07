@@ -8,10 +8,12 @@ handlers:
 - url: /stylesheets
   static_dir: stylesheets
 
-- url: /js
-  static_dir: js
-  mime_type: text/javascript
+- url: /bower_components
+  static_dir: bower_components
   
+- url: /elements
+  static_dir: elements
+
 - url: /.*
   script: test.application
   secure: always
