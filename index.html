@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 {% autoescape true %}
 <html>
-  <link type="text/css" rel="stylesheet" href="stylesheets/main.css" />
-  <script data-main="js/app" src="js/lib/require.js"></script>
+  <head>
+    <link type="text/css" rel="stylesheet" href="stylesheets/main.css" />
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="elements/my-element.html">
+  </head>
+  
   <body>
     <svg id="canvas"></svg>
   </body>

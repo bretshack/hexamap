@@ -1,0 +1,13 @@
+{
+  "name": "chrome-hexmapper",
+  "description": "",
+  "homepage": "",
+  "keywords": [
+  ],
+  "author": "bretshack",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "core-ajax": "Polymer/core-ajax#master"
+  }
+}
