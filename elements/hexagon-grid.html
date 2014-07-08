@@ -2,16 +2,18 @@
 
 <polymer-element name="hexagon-grid">
   <template>
-    <svg id="canvas" perserveAspectRatio="xMidYMid meet">
-      <template repeat="{{hexes}}">
-          <path d="{{path}}"
-              style="fill:{{fill}}"
-              stroke="{{stroke}}"
-              stroke-width="{{width}}"
-              transform="translate({{shiftX}},{{shiftZ}})">
-          </path>
+    <svg class="canvas" height="100%" width="100%">
+      <g class="viewport" preserveAspectRatio="xMidYMid meet" height="100%" width="100%" align="center">
+        <template repeat="{{hexes}}">
+            <path d="{{path}}"
+                  style="fill:{{fill}}"
+                  stroke="{{stroke}}"
+                  stroke-width="{{width}}"
+                  transform="translate({{shiftX}},{{shiftZ}})">
+            </path>
         </template>
-      </svg>
+      </g>
+    </svg>
   </template>
   <script>
     Polymer("hexagon-grid", {
@@ -19,8 +21,8 @@
       stroke: "black",
       width: 1,
       fill: "#FFFFFF",
-      baseX: 100,
-      baseY: 100,
+      baseX: 500,
+      baseY: 200,
       ready: function() {
         var _s32 = (Math.sqrt(3) / 2);
         this.path =
@@ -33,15 +35,25 @@
         " z";
 
         this.hexes = [
-          {shiftX: 0+this.baseX, shiftZ: 0+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
-          {shiftX: 0+this.baseX, shiftZ: this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
-          {shiftX: 0+this.baseX, shiftZ: -this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
-          {shiftX: -this.rad*3/2+this.baseX, shiftZ: this.rad*_s32+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
-          {shiftX: -this.rad*3/2+this.baseX, shiftZ: -this.rad*_s32+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
-          {shiftX: this.rad*3/2+this.baseX, shiftZ: this.rad*_s32+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
-          {shiftX: this.rad*3/2+this.baseX, shiftZ: -this.rad*_s32+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
-          {shiftX: this.rad*3+this.baseX, shiftZ: 0+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
-          {shiftX: -this.rad*3+this.baseX, shiftZ: 0+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 0, shiftX: 0+this.baseX, shiftZ: 0+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 1, shiftX: 0+this.baseX, shiftZ: this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 2, shiftX: 0+this.baseX, shiftZ: -this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 3, shiftX: -this.rad*3/2+this.baseX, shiftZ: this.rad*_s32+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 4, shiftX: -this.rad*3/2+this.baseX, shiftZ: -this.rad*_s32+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 5, shiftX: this.rad*3/2+this.baseX, shiftZ: this.rad*_s32+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 6, shiftX: this.rad*3/2+this.baseX, shiftZ: -this.rad*_s32+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 7, shiftX: this.rad*3+this.baseX, shiftZ: 0+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 8, shiftX: -this.rad*3+this.baseX, shiftZ: 0+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 9, shiftX: 0+this.baseX, shiftZ: this.rad*_s32*4+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 10, shiftX: 0+this.baseX, shiftZ: -this.rad*_s32*4+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 11, shiftX: this.rad*3/2+this.baseX, shiftZ: -this.rad*_s32*3+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 12, shiftX: this.rad*3/2+this.baseX, shiftZ: this.rad*_s32*3+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 13, shiftX: -this.rad*3/2+this.baseX, shiftZ: -this.rad*_s32*3+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 14, shiftX: -this.rad*3/2+this.baseX, shiftZ: this.rad*_s32*3+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 15, shiftX: this.rad*3+this.baseX, shiftZ: this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 16, shiftX: this.rad*3+this.baseX, shiftZ: -this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 16, shiftX: -this.rad*3+this.baseX, shiftZ: this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 16, shiftX: -this.rad*3+this.baseX, shiftZ: -this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
         ];
       }
     });

@@ -1,39 +1,23 @@
-{"grid":[
-  {"shiftX": "0", "shiftY": "-3"},
-  {"shiftX": "1", "shiftY": "-3"},
-  {"shiftX": "2", "shiftY": "-3"},
-  {"shiftX": "3", "shiftY": "-3"},
-  {"shiftX": "-1", "shiftY": "-2"},
-  {"shiftX": "0", "shiftY": "-2"},
-  {"shiftX": "1", "shiftY": "-2"},
-  {"shiftX": "2", "shiftY": "-2"},
-  {"shiftX": "3", "shiftY": "-2"},
-  {"shiftX": "-2", "shiftY": "-1"},
-  {"shiftX": "-1", "shiftY": "-1"},
-  {"shiftX": "0", "shiftY": "-1"},
-  {"shiftX": "1", "shiftY": "-1"},
-  {"shiftX": "2", "shiftY": "-1"},
-  {"shiftX": "3", "shiftY": "-1"},
-  {"shiftX": "-3", "shiftY": "0"},
-  {"shiftX": "-2", "shiftY": "0"},
-  {"shiftX": "-1", "shiftY": "0"},
-  {"shiftX": "0", "shiftY": "0"},
-  {"shiftX": "1", "shiftY": "0"},
-  {"shiftX": "2", "shiftY": "0"},
-  {"shiftX": "3", "shiftY": "0"},
-  {"shiftX": "-3", "shiftY": "1"},
-  {"shiftX": "-2", "shiftY": "1"},
-  {"shiftX": "-1", "shiftY": "1"},
-  {"shiftX": "0", "shiftY": "1"},
-  {"shiftX": "1", "shiftY": "1"},
-  {"shiftX": "2", "shiftY": "1"},
-  {"shiftX": "-3", "shiftY": "2"},
-  {"shiftX": "-2", "shiftY": "2"},
-  {"shiftX": "-1", "shiftY": "2"},
-  {"shiftX": "0", "shiftY": "2"},
-  {"shiftX": "1", "shiftY": "2"},
-  {"shiftX": "-3", "shiftY": "3"},
-  {"shiftX": "-2", "shiftY": "3"},
-  {"shiftX": "-1", "shiftY": "3"},
-  {"shiftX": "0", "shiftY": "3"}
-]}
+id: 0   shiftX: 0               shiftZ: 0
+
+id: 1   shiftX: 0               shiftZ: this.rad*_s32*2
+id: 2   shiftX: 0               shiftZ: -this.rad*_s32*2
+id: 3   shiftX: -this.rad*3/2   shiftZ: this.rad*_s32
+id: 4   shiftX: -this.rad*3/2   shiftZ: -this.rad*_s32
+id: 5   shiftX: this.rad*3/2    shiftZ: this.rad*_s32
+id: 6   shiftX: this.rad*3/2    shiftZ: -this.rad*_s32
+
+
+id: 9   shiftX: 0               shiftZ: this.rad*_s32*4
+id: 10  shiftX: 0               shiftZ: -this.rad*_s32*4
+id: 11  shiftX: this.rad*3/2    shiftZ: -this.rad*_s32*3
+id: 12  shiftX: this.rad*3/2    shiftZ: this.rad*_s32*3
+id: 13  shiftX: -this.rad*3/2   shiftZ: -this.rad*_s32*3
+id: 14  shiftX: -this.rad*3/2   shiftZ: this.rad*_s32*3
+
+id: 15  shiftX: this.rad*3      shiftZ: this.rad*_s32*2
+id: 16  shiftX: this.rad*3      shiftZ: -this.rad*_s32*2
+id: 17  shiftX: -this.rad*3     shiftZ: this.rad*_s32*2
+id: 18  shiftX: -this.rad*3     shiftZ: -this.rad*_s32*2
+id: 7   shiftX: this.rad*3      shiftZ: 0
+id: 8   shiftX: -this.rad*3     shiftZ: 0

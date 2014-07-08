@@ -10,9 +10,12 @@ handlers:
 
 - url: /bower_components
   static_dir: bower_components
-  
+
 - url: /elements
   static_dir: elements
+
+- url: /js
+  static_dir: js
 
 - url: /.*
   script: test.application
