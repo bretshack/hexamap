@@ -1,19 +1,47 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="hexagon-tile.html">
 
 <polymer-element name="hexagon-grid">
-  <template repeat="{{lights}}">
-    <ul>
-      <li> {{color}} , {{dark}} , {{cy}} </li>
-    </ul>
+  <template>
+    <svg id="canvas" perserveAspectRatio="xMidYMid meet">
+      <template repeat="{{hexes}}">
+          <path d="{{path}}"
+              style="fill:{{fill}}"
+              stroke="{{stroke}}"
+              stroke-width="{{width}}"
+              transform="translate({{shiftX}},{{shiftZ}})">
+          </path>
+        </template>
+      </svg>
   </template>
   <script>
     Polymer("hexagon-grid", {
+      rad: 30,
+      stroke: "black",
+      width: 1,
+      fill: "#FFFFFF",
+      baseX: 100,
+      baseY: 100,
       ready: function() {
-        this.lights = [
-          {color: 'red', dark: 'maroon', cy: 80},
-          {color: 'orange', dark: 'sienna', cy: 200},
-          {color: 'lightgreen', dark: 'darkgreen', cy: 320}
+        var _s32 = (Math.sqrt(3) / 2);
+        this.path =
+        "M" + (1)*this.rad + " " + (0) +
+        " L" + (1/2)*this.rad + " " + (_s32)*this.rad +
+        " L" + (-1/2)*this.rad + " " + (_s32)*this.rad +
+        " L" + (-1)*this.rad + " " + (0) +
+        " L" + (-1/2)*this.rad +  " " + (-_s32)*this.rad +
+        " L" + (1/2)*this.rad + " "  + (-_s32)*this.rad +
+        " z";
+
+        this.hexes = [
+          {shiftX: 0+this.baseX, shiftZ: 0+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {shiftX: 0+this.baseX, shiftZ: this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {shiftX: 0+this.baseX, shiftZ: -this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {shiftX: -this.rad*3/2+this.baseX, shiftZ: this.rad*_s32+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {shiftX: -this.rad*3/2+this.baseX, shiftZ: -this.rad*_s32+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {shiftX: this.rad*3/2+this.baseX, shiftZ: this.rad*_s32+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {shiftX: this.rad*3/2+this.baseX, shiftZ: -this.rad*_s32+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {shiftX: this.rad*3+this.baseX, shiftZ: 0+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {shiftX: -this.rad*3+this.baseX, shiftZ: 0+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
         ];
       }
     });
