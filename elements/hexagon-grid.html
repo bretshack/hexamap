@@ -4,12 +4,12 @@
   <template>
     <svg class="canvas" height="100%" width="100%">
       <g class="viewport" preserveAspectRatio="xMidYMid meet" height="100%" width="100%" align="center">
-        <template repeat="{{hexes}}">
+        <template repeat="{{tiles}}">
             <path d="{{path}}"
                   style="fill:{{fill}}"
                   stroke="{{stroke}}"
                   stroke-width="{{width}}"
-                  transform="translate({{shiftX}},{{shiftZ}})">
+                  transform="translate({{shiftZ}},{{shiftX}})">
             </path>
         </template>
       </g>
@@ -21,20 +21,20 @@
       stroke: "black",
       width: 1,
       fill: "#FFFFFF",
-      baseX: 500,
-      baseY: 200,
+      baseX: 200,
+      baseY: 500,
       ready: function() {
         var _s32 = (Math.sqrt(3) / 2);
         this.path =
-        "M" + (1)*this.rad + " " + (0) +
-        " L" + (1/2)*this.rad + " " + (_s32)*this.rad +
-        " L" + (-1/2)*this.rad + " " + (_s32)*this.rad +
-        " L" + (-1)*this.rad + " " + (0) +
-        " L" + (-1/2)*this.rad +  " " + (-_s32)*this.rad +
-        " L" + (1/2)*this.rad + " "  + (-_s32)*this.rad +
+        "M" + (0)*this.rad + " " + (1)*this.rad +
+        " L" + (_s32)*this.rad + " " + (1/2)*this.rad +
+        " L" + (_s32)*this.rad + " " + (-1/2)*this.rad +
+        " L" + (0)*this.rad + " " + (-1)*this.rad +
+        " L" + (-_s32)*this.rad +  " " + (-1/2)*this.rad +
+        " L" + (-_s32)*this.rad + " "  + (1/2)*this.rad +
         " z";
 
-        this.hexes = [
+        this.tiles = [
           {id: 0, shiftX: 0+this.baseX, shiftZ: 0+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
           {id: 1, shiftX: 0+this.baseX, shiftZ: this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
           {id: 2, shiftX: 0+this.baseX, shiftZ: -this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
@@ -52,8 +52,8 @@
           {id: 14, shiftX: -this.rad*3/2+this.baseX, shiftZ: this.rad*_s32*3+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
           {id: 15, shiftX: this.rad*3+this.baseX, shiftZ: this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
           {id: 16, shiftX: this.rad*3+this.baseX, shiftZ: -this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
-          {id: 16, shiftX: -this.rad*3+this.baseX, shiftZ: this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
-          {id: 16, shiftX: -this.rad*3+this.baseX, shiftZ: -this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 17, shiftX: -this.rad*3+this.baseX, shiftZ: this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
+          {id: 18, shiftX: -this.rad*3+this.baseX, shiftZ: -this.rad*_s32*2+this.baseY, stroke: this.stroke, width: this.width, style: this.style, path: this.path, fill: this.fill},
         ];
       }
     });

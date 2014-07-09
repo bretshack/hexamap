@@ -1,11 +1,11 @@
-id: 0   shiftX: 0               shiftZ: 0
+id: 0   x:0   y:0   z:0   shiftX: 0               shiftZ: 0
 
-id: 1   shiftX: 0               shiftZ: this.rad*_s32*2
-id: 2   shiftX: 0               shiftZ: -this.rad*_s32*2
-id: 3   shiftX: -this.rad*3/2   shiftZ: this.rad*_s32
-id: 4   shiftX: -this.rad*3/2   shiftZ: -this.rad*_s32
-id: 5   shiftX: this.rad*3/2    shiftZ: this.rad*_s32
-id: 6   shiftX: this.rad*3/2    shiftZ: -this.rad*_s32
+id: 1   x:1   y:0   z:-1  shiftX: 0               shiftZ: this.rad*_s32*2
+id: 2   x:-1  y:1   z:0   shiftX: 0               shiftZ: -this.rad*_s32*2
+id: 3   x:0   y:1   z:-1  shiftX: -this.rad*3/2   shiftZ: this.rad*_s32
+id: 4   x:-1  y:1   z:0   shiftX: -this.rad*3/2   shiftZ: -this.rad*_s32
+id: 5   x:-1  y:0   z:1   shiftX: this.rad*3/2    shiftZ: this.rad*_s32
+id: 6   x:-1  y:1   z:0   shiftX: this.rad*3/2    shiftZ: -this.rad*_s32
 
 
 id: 9   shiftX: 0               shiftZ: this.rad*_s32*4
@@ -21,3 +21,32 @@ id: 17  shiftX: -this.rad*3     shiftZ: this.rad*_s32*2
 id: 18  shiftX: -this.rad*3     shiftZ: -this.rad*_s32*2
 id: 7   shiftX: this.rad*3      shiftZ: 0
 id: 8   shiftX: -this.rad*3     shiftZ: 0
+
+
+
+id: 0   x:0   y:0   z:0   shiftX: 0               shiftZ: 0
+
+id: 1   x:1   y:0   z:-1  shiftX: 0               shiftZ: this.rad*_s32*2
+id: 2   x:2   y:0   z:-2  shiftX: 0               shiftZ: -this.rad*_s32*2
+id: 3   x:3   y:0   z:-3  shiftX: -this.rad*3/2   shiftZ: this.rad*_s32
+id: 4   x:-1  y:0   z:1
+id: 5   x:-2  y:0   z:2
+id: 6   x:-3  y:0   z:3
+
+id: 7   x:1   y:-1  z:0
+id: 8   x:2   y:-2  z:0
+id: 9   x:3   y:-3  z:0
+id: 10  x:-1  y:1   z:0
+id: 11  x:-2  y:2   z:0
+id: 12  x:-3  y:3   z:0
+
+id: 13  x:0   y:1   z:-1
+id: 14  x:0   y:2   z:-2
+id: 15  x:0   y:3   z:-3
+id: 16  x:0   y:-1  z:1
+id: 17  x:0   y:-2  z:2
+id: 18  x:0   y:-3  z:3
+
+id: 19  x:0   y:-3  z:3
+id: 20  x:0   y:-3  z:3
+id: 21  x:0   y:-3  z:3
