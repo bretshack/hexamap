@@ -1,3 +1,5 @@
+//This code taken from "Hexagon Grid Functions" on http://www.redblobgames.com/grids/hexagons.html (Copyright 2013 Red Blob Games <redblobgames@gmail.com>)
+
 // The shape of a hexagon is fixed by the scale and orientation
 function makeHexagonShape(scale, orientation) {
     var points = hexToPolygon(scale, 0, 0, orientation);
