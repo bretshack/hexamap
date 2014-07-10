@@ -1,3 +1,5 @@
+//This code taken from "Hexagon Grid Functions" on http://www.redblobgames.com/grids/hexagons.html (Copyright 2013 Red Blob Games <redblobgames@gmail.com>)
+
 var List = function() {
     this.length = 0;
 };
