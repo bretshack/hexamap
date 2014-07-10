@@ -1,15 +1,5 @@
 //This code taken from "Hexagon Grid Functions" on http://www.redblobgames.com/grids/hexagons.html (Copyright 2013 Red Blob Games <redblobgames@gmail.com>)
 
-// The shape of a hexagon is fixed by the scale and orientation
-function makeHexagonShape(scale, orientation) {
-    var points = hexToPolygon(scale, 0, 0, orientation);
-    var svg_coord = "";
-    points.forEach(function(p) {
-        svg_coord += p + " ";
-    });
-    return svg_coord;
-}
-
 // (x, y) should be the center
 // scale should be the distance from corner to corner
 // orientation should be 0 (flat bottom hex) or 1 (flat side hex)
@@ -26,6 +16,16 @@ function hexToPolygon(scale, x, y, orientation) {
         y + 0.5 * scale * Math.sin(angle)));
     }
     return points;
+}
+
+// The shape of a hexagon is fixed by the scale and orientation
+function makeHexagonShape(scale, orientation) {
+    var points = hexToPolygon(scale, 0, 0, orientation);
+    var svg_coord = "";
+    points.forEach(function(p) {
+        svg_coord += p + " ";
+    });
+    return svg_coord;
 }
 
 /* A grid diagram will be an object with
@@ -228,3 +228,36 @@ function makeGridDiagram(svg, cubes) {
 
     return diagram;
 }
+
+var Std = function() {}
+
+function $iterator(o) {
+    if (o instanceof Array)
+        return function() {
+            return HxOverrides.iter(o);
+        };
+    return typeof (o.iterator) == 'function' ? $bind(o, o.iterator) : o.iterator;
+}
+;
+var $_;
+function $bind(o, m) {
+    var f = function() {
+        return f.method.apply(f.scope, arguments);
+    };
+    f.scope = o;
+    f.method = m;
+    return f;
+}
+;
+Math.__name__ = ["Math"];
+Math.NaN = Number.NaN;
+Math.NEGATIVE_INFINITY = Number.NEGATIVE_INFINITY;
+Math.POSITIVE_INFINITY = Number.POSITIVE_INFINITY;
+Math.isFinite = function(i) {
+    return isFinite(i);
+};
+Math.isNaN = function(i) {
+    return isNaN(i);
+};
+Cube._directions = [[1, -1, 0], [1, 0, -1], [0, 1, -1], [-1, 1, 0], [-1, 0, 1], [0, -1, 1]];
+Grid.SQRT_3_2 = Math.sqrt(3) / 2;
