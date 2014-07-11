@@ -259,13 +259,12 @@ function makeGridDiagram(svg, cubes) {
     var diagram = {};
 
     diagram.nodes = cubes.map(function(n) { return {cube: n, key: n.toString()}; });
-    diagram.root = svg.append('g');
+    diagram.root = svg.append('g').attr('id','grid');
     diagram.tiles = diagram.root.selectAll("g.tile").data(diagram.nodes, function(node) { return node.key; });
     diagram.tiles.enter()
         .append('g').attr('class', "tile")
         .each(function(d) { d.node = d3.select(this); });
     diagram.polygons = diagram.tiles.append('polygon');
-
 
     diagram.makeTilesSelectable = function(callback) {
         diagram.selected = d3.set();
@@ -319,8 +318,11 @@ function makeGridDiagram(svg, cubes) {
 
         return diagram;
     };
-
-
+/*
+    diagram.center = function(x,y) {
+      cubes.select('#grid').
+    }
+*/
     diagram.addCubeCoordinates = function(withMouseover) {
         diagram.tiles.append('text')
             .each(function(d) {
@@ -404,6 +406,7 @@ function makeGridDiagram(svg, cubes) {
     return diagram;
 };
 
+/*
 var _s32 = (Math.sqrt(3) / 2);
 var path =
         "M" + (0)*30 + " " + (1)*30 +
@@ -413,11 +416,6 @@ var path =
         " L" + (-_s32)*30 +  " " + (-1/2)*30 +
         " L" + (-_s32)*30 + " "  + (1/2)*30 +
         " z";
-
-var test = d3.selectAll("svg").append("circle").attr("cx", "100").attr("cy", "100").attr("r", 2.5);
-
-/*
-makeGridDiagram(test,
-                Grid.hexagonalShape(5))
-    .update(30, false);
 */
+
+var grid = makeGridDiagram(d3.select("#canvas"), Grid.hexagonalShape(9)).update(50, false);
